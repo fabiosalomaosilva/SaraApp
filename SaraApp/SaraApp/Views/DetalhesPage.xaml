@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Detalhes da ação"
+             x:Class="SaraApp.Views.DetalhesPage">
+
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Image Source="FundoAutorizado.png" HorizontalOptions="Center" IsVisible="{Binding Autorizado}"></Image>
+            <Image Source="FundoNaoAutorizado.png" HorizontalOptions="Center" IsVisible="{Binding NaoAutorizado}"></Image>
+            <Label Text="Recomendado" HorizontalTextAlignment="Center" IsVisible="{Binding Autorizado}" FontSize="28" Margin="10, 15, 10, 10"></Label>
+            <Label Text="Não Recomendado" HorizontalTextAlignment="Center" IsVisible="{Binding NaoAutorizado}" FontSize="28" Margin="10, 15, 10, 10"></Label>
+            <Label Text="Detalhes da ação de saúde" HorizontalTextAlignment="Center" FontSize="15" Margin="10, 15, 10, 25"></Label>
+
+            <Label Text="{Binding Acao.Nome}" Margin="10" FontSize="16"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

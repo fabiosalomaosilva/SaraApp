@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding Titulo}"
+             x:Class="SaraApp.Views.Main">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="gene.png"></Image>
+            <Label Text="Selecione a patologia para mais informações" HorizontalTextAlignment="Center" FontSize="14" Margin="10"></Label>
+            
+            <ListView x:Name="ListaPatologias" 
+                      ItemsSource="{Binding Patologias}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true"
+                      CachingStrategy="RecycleElement"
+                      ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <Image Source="Icon_Patologia.png"></Image>
+                                <StackLayout Padding="10" Orientation="Vertical">
+                                    <Label Text="{Binding Nome}"
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemTextStyle}"
+                                           FontSize="24"/>
+                                    </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

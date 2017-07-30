@@ -15,24 +15,31 @@ namespace SaraApp
             SetMainPage();
         }
 
+        public static string BackendUrl { get; set; } = "http://saraapi.azurewebsites.net/";
+        public static int NavigationId { get; set; }
+        public static object Objeto { get; set; }
+
         public static void SetMainPage()
         {
+            Current.MainPage = new NavigationPage(new Main());
+            /**
             Current.MainPage = new TabbedPage
             {
                 Children =
                 {
                     new NavigationPage(new ItemsPage())
                     {
-                        Title = "Browse",
+                        Title = "Patologias",
                         Icon = Device.OnPlatform("tab_feed.png",null,null)
                     },
                     new NavigationPage(new AboutPage())
                     {
-                        Title = "About",
+                        Title = "FAQ",
                         Icon = Device.OnPlatform("tab_about.png",null,null)
                     },
                 }
             };
+            **/
         }
     }
 }

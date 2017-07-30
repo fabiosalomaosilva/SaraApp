@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            Title="{Binding Titulo}"
+             x:Class="SaraApp.Views.Acoes">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Recomendado">
+        <ListView x:Name="ListaRecomendados" 
+                  ItemsSource="{Binding Recomendados}"
+                  VerticalOptions="FillAndExpand"
+                  HasUnevenRows="true"
+                  CachingStrategy="RecycleElement"
+                  ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout Padding="10" Orientation="Horizontal">
+                            <Image Source="Icon_Acao.png"></Image>
+                            <StackLayout Padding="10" Orientation="Vertical">
+                                <Label Text="{Binding Nome}"
+                                       HorizontalTextAlignment="Start"
+                                       Style="{DynamicResource ListItemTextStyle}"
+                                       FontSize="16"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+    <ContentPage Title="Não recomendado">
+        <ListView x:Name="ListaNaoRecomendados" 
+                  ItemsSource="{Binding NaoRecomendados}"
+                  VerticalOptions="FillAndExpand"
+                  HasUnevenRows="true"
+                  CachingStrategy="RecycleElement"
+                  ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout Padding="10" Orientation="Horizontal">
+                            <Image Source="Icon_Acao.png"></Image>
+                            <StackLayout Padding="10" Orientation="Vertical">
+                                <Label Text="{Binding Nome}"
+                                       HorizontalTextAlignment="Start"
+                                       Style="{DynamicResource ListItemTextStyle}"
+                                       FontSize="16"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+</TabbedPage>
